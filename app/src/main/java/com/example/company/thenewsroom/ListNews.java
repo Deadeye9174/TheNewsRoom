@@ -58,6 +58,7 @@ public class ListNews extends AppCompatActivity {
                 loadNews(source,true);
             }
         });
+        //Some changes
 
         diagonalLayout = (DiagonalLayout) findViewById(R.id.diagonalLayout);
         diagonalLayout.setOnClickListener(new View.OnClickListener() {
