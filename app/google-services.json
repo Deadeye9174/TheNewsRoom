@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "422113756990",
+    "firebase_url": "https://thenewsroom-c9265.firebaseio.com",
+    "project_id": "thenewsroom-c9265",
+    "storage_bucket": "thenewsroom-c9265.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422113756990:android:286637607078f7b3",
+        "android_client_info": {
+          "package_name": "com.example.company.thenewsroom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422113756990-ltj21fb4oh4ppkuo8vjf87asegfa858p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.company.thenewsroom",
+            "certificate_hash": "cd4293a7cfc013a7f9dcad71fefbce074174334d"
+          }
+        },
+        {
+          "client_id": "422113756990-1vq4lin59b2n6a948fa7s0k8cnhsefhg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfTglNKKtzK7AupFnSq2himXGLWxMpwjo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422113756990-1vq4lin59b2n6a948fa7s0k8cnhsefhg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
