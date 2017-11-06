@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             String cache = Paper.book().read("cache");
             if (cache != null && !cache.isEmpty()) {
                 WebSite webSite = new Gson().fromJson(cache, WebSite.class); // Convert cache from JSON to Object
-                adapter = new ListSourceAdapter(getBaseContext(), webSite);
+                adapter = new ListSourceAdapter(getBaseContext(),  webSite.getSources());
                 adapter.notifyDataSetChanged();
                 listWebsite.setAdapter(adapter);
             }
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 mService.getSources().enqueue(new Callback<WebSite>() {
                     @Override
                     public void onResponse(Call<WebSite> call, Response<WebSite> response) {
-                        adapter = new ListSourceAdapter(getBaseContext(),response.body());
+                        adapter = new ListSourceAdapter(getBaseContext(),response.body().getSources());
                         adapter.notifyDataSetChanged();
                         listWebsite.setAdapter(adapter);
 
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             mService.getSources().enqueue(new Callback<WebSite>() {
                 @Override
                 public void onResponse(Call<WebSite> call, Response<WebSite> response) {
-                    adapter = new ListSourceAdapter(getBaseContext(),response.body());
+                    adapter = new ListSourceAdapter(getBaseContext(),response.body().getSources());
                     adapter.notifyDataSetChanged();
                     listWebsite.setAdapter(adapter);
 
