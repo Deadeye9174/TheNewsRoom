@@ -16,6 +16,11 @@ public class LoginScreen extends AppCompatActivity {
     TextView txtSlogan;
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);

@@ -21,16 +21,23 @@ import io.rmiri.buttonloading.ButtonLoading;
 
 public class SignIn extends AppCompatActivity {
 
-    EditText edtPhone,edtPassword;
+    EditText username,password;
     ButtonLoading btnSignIn;
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(SignIn.this,LoginScreen.class);
+        startActivity(intent);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        edtPassword = (MaterialEditText) findViewById(R.id.edtPassword);
-        edtPhone = (MaterialEditText) findViewById(R.id.edtPhone);
+        password = (MaterialEditText) findViewById(R.id.password);
+        username = (MaterialEditText) findViewById(R.id.username);
 
         btnSignIn = (ButtonLoading) findViewById(R.id.btnSignIn);
 
@@ -52,18 +59,18 @@ public class SignIn extends AppCompatActivity {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
-                        if(dataSnapshot.child(edtPhone.getText().toString()).exists()) {
+                        if(dataSnapshot.child(username.getText().toString()).exists()) {
                             mDialog.dismiss();
 
-                            User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
-                            if (user.getPassword().equals(edtPassword.getText().toString())) {
+                            User user = dataSnapshot.child(username.getText().toString()).getValue(User.class);
+                            if (user.getPassword().equals(password.getText().toString())) {
                                 Toast.makeText(SignIn.this, "Sign In Successful!!!", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(SignIn.this,MainActivity.class);
+                                //intent.putExtra();
                                 startActivity(intent);
                                 finish();
                             } else {
                                 Toast.makeText(SignIn.this, "Wrong Password!!", Toast.LENGTH_SHORT).show();
-
                             }
                         }
                         else
@@ -80,5 +87,6 @@ public class SignIn extends AppCompatActivity {
                 });
             }
         });
+
     }
 }
