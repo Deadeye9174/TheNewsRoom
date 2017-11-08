@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context="com.example.company.thenewsroom.LoginScreen">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/newsroom2" />
+
+        <TextView
+            android:id="@+id/txtSlogan"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/slogan"
+            android:textColor="@android:color/white" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <io.rmiri.buttonloading.ButtonLoading
+            android:id="@+id/btnSignUp"
+            android:textColor="@android:color/white"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_margin="8dp"
+            android:layout_height="50dp"
+            app:BL_backgroundColor="@color/btnSignUp"
+            app:BL_circleColor="#00AFEF"
+            android:layout_marginTop="32dp"
+            app:BL_circleColorSecond="#8000AFEF"
+            app:BL_enable="true"
+            app:BL_stateShow="normal"
+            app:BL_text="Sign Up"
+            app:BL_textColor="#FFFFFF"
+            app:BL_textSize="14sp"
+            />
+
+        <io.rmiri.buttonloading.ButtonLoading
+            android:id="@+id/btnSignIn"
+            android:textColor="@android:color/white"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_margin="8dp"
+            android:layout_height="50dp"
+            app:BL_backgroundColor="@color/btnSignActive"
+            app:BL_circleColor="#00AFEF"
+            android:layout_marginTop="32dp"
+            app:BL_circleColorSecond="#8000AFEF"
+            app:BL_enable="true"
+            app:BL_stateShow="normal"
+            app:BL_text="Sign In"
+            app:BL_textColor="#FFFFFF"
+            app:BL_textSize="14sp"
+            />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

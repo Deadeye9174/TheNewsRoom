@@ -21,6 +21,9 @@
         <activity android:name=".ListNews" />
         <activity android:name=".DetailArticle" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".SignIn" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".LoginScreen"></activity>
     </application>
 
 </manifest>

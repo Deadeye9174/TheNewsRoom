@@ -34,13 +34,13 @@ public class SplashScreen extends AppCompatActivity {
         textView.setAnimation(animation);
         imageView.setAnimation(animation1);
 
-        intent = new Intent(this,MainActivity.class);
+        intent = new Intent(SplashScreen.this,LoginScreen.class);
 
         Thread timer = new Thread(){
             public void run()
             {
                 try{
-                    sleep(3000);
+                    sleep(5000);
                 }catch (Exception e){
                     e.printStackTrace();
                 }
