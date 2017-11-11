@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">The NewsRoom</string>
     <string name="slogan">NewsRoom-Think different!!!</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+
 </resources>

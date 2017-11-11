@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -39,7 +38,7 @@ public class SignIn extends AppCompatActivity {
         password = (MaterialEditText) findViewById(R.id.password);
         username = (MaterialEditText) findViewById(R.id.username);
 
-        btnSignIn = (ButtonLoading) findViewById(R.id.btnSignIn);
+        btnSignIn = findViewById(R.id.btnSignIn);
 
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -62,11 +61,16 @@ public class SignIn extends AppCompatActivity {
                         if(dataSnapshot.child(username.getText().toString()).exists()) {
                             mDialog.dismiss();
 
+
                             User user = dataSnapshot.child(username.getText().toString()).getValue(User.class);
                             if (user.getPassword().equals(password.getText().toString())) {
                                 Toast.makeText(SignIn.this, "Sign In Successful!!!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignIn.this, "Welcome "+user.getFirstname()+" "+user.getLastname(), Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(SignIn.this,MainActivity.class);
-                                //intent.putExtra();
+                                intent.putExtra("firstName",user.getFirstname());
+                                intent.putExtra("lastName",user.getLastname());
+                                intent.putExtra("password",user.getPassword());
+                                intent.putExtra("userName",username.getText().toString());
                                 startActivity(intent);
                                 finish();
                             } else {
